@@ -1,0 +1,368 @@
+/* Shared Layout */
+.panchayat-admin,
+.panchayat-public {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 16px;
+  font-family: "Noto Sans Devanagari", Arial, sans-serif;
+  background-color: #f8f9fb;
+  color: #333;
+}
+
+/* Headings */
+.panchayat-admin h2,
+.panchayat-public h2 {
+  color: #1a2bb2;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* ========== ADMIN FORM ========== */
+.admin-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.admin-form input[type="text"],
+.admin-form input[type="number"],
+.admin-form textarea,
+.admin-form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.admin-form input:focus,
+.admin-form textarea:focus,
+.admin-form select:focus {
+  border-color: #1a2bb2;
+  outline: none;
+}
+
+.admin-form .row {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-form .row input,
+.admin-form .row select {
+  flex: 1;
+}
+
+/* File Input */
+.file-label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Upload progress preview */
+.upload-preview {
+  margin-top: 10px;
+}
+.upload-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f3f3;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* Existing Photos */
+.existing-photos {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.photo-thumb {
+  position: relative;
+  width: 100px;
+  height: 70px;
+}
+.photo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+.photo-thumb button {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 3px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.photo-thumb button:hover {
+  background: rgba(255, 0, 0, 0.8);
+}
+
+/* Form Buttons */
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.save-btn,
+.cancel-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.save-btn {
+  background-color: #1a2bb2;
+  color: white;
+}
+.save-btn:hover {
+  background-color: #16249a;
+}
+
+.cancel-btn {
+  background-color: #e0e0e0;
+  color: #333;
+}
+.cancel-btn:hover {
+  background-color: #ccc;
+}
+
+/* ========== ADMIN PROJECT GRID ========== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card .thumb {
+  width: 100%;
+  height: 180px;
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-card .noimg {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.project-card .pc {
+  padding: 14px;
+  flex: 1;
+}
+.project-card .pc h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+.project-card .pc .status {
+  font-size: 12px;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 6px;
+  text-transform: capitalize;
+}
+.project-card .pc .status.completed {
+  background: #28a745;
+}
+.project-card .pc .status.upcoming {
+  background: #ffc107;
+  color: #111;
+}
+.project-card .pc .cost {
+  margin: 10px 0;
+  font-weight: 600;
+  color: #1a2bb2;
+}
+.pc-actions {
+  display: flex;
+  gap: 8px;
+}
+.pc-actions button {
+  flex: 1;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.pc-actions button:first-child {
+  background: #1a2bb2;
+  color: white;
+}
+.pc-actions button:first-child:hover {
+  background: #16249a;
+}
+.pc-actions button:last-child {
+  background: #dc3545;
+  color: white;
+}
+.pc-actions button:last-child:hover {
+  background: #b71c1c;
+}
+
+/* ========== PUBLIC VIEW ========== */
+.filter-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.filter-row button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.filter-row button.active {
+  background: #1a2bb2;
+  color: white;
+  border-color: #1a2bb2;
+}
+
+/* Public Project Cards */
+.public-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+.public-card {
+  background: #fff;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.public-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+.public-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.public-header h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.public-header .tag {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: white;
+  text-transform: capitalize;
+}
+.public-header .tag.completed {
+  background: #28a745;
+}
+.public-header .tag.upcoming {
+  background: #ffc107;
+  color: #111;
+}
+
+.desc {
+  margin: 8px 0;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.photo-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.photo-row img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  transition: transform 0.3s;
+}
+.photo-row img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.lightbox img {
+  max-width: 92%;
+  max-height: 92%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .admin-form .row {
+    flex-direction: column;
+  }
+  .project-card {
+    flex-direction: column;
+  }
+  .project-card .thumb {
+    height: 180px;
+  }
+}

@@ -1,0 +1,49 @@
+.user-tables-container {
+  padding: 20px;
+}
+
+.user-tables-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0066cc;
+}
+
+.user-table-card {
+  margin-bottom: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.user-table-card h3 {
+  color: #d32f2f;
+  margin-bottom: 15px;
+}
+
+.responsive-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-table th,
+.responsive-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.responsive-table th {
+  background-color: #0066cc;
+  color: white;
+}
+
+.no-tables {
+  text-align: center;
+  color: #888;
+  font-size: 16px;
+}
+.responsive-table {
+  overflow-x: auto;
+}

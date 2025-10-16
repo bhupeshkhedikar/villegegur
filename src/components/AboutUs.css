@@ -1,0 +1,116 @@
+/* General Section */
+.about-us {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.header-section {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0a6ebd, #42a5f5); /* Modern gradient */
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.header-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Adds depth */
+}
+
+.header-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+/* Content */
+.content-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.image-container {
+  flex: 1 1 400px;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+}
+
+.objectives-container {
+  flex: 2 1 600px;
+}
+
+.objectives-container h2 {
+  color: #0a6ebd;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.bullet {
+  color: #0a6ebd;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .content-section {
+    flex-direction: column;
+  }
+
+  .image-container, .objectives-container {
+    flex: 1 1 100%;
+  }
+}

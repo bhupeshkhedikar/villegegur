@@ -1,0 +1,172 @@
+.admin-panel {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 150, 255, 0.6);
+}
+
+/* Tabs Container */
+.admin-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* Tab Buttons */
+.admin-tabs button {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #b0c7ff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.admin-tabs button:hover {
+  color: #fff;
+  border-color: rgba(0, 150, 255, 0.8);
+  box-shadow: 0 0 12px rgba(0, 150, 255, 0.6);
+}
+
+/* Active Tab */
+.admin-tabs .active {
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.7);
+  transform: scale(1.05);
+}
+
+/* Content Area */
+.admin-content {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Animation for smooth tab switch */
+.admin-content {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .admin-tabs button {
+    width: 45%;
+  }
+}
+.auth-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.auth-box {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.auth-box h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #0066cc;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.auth-box button:hover {
+  background-color: #004999;
+}
+
+.auth-box .error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.logout-btn {
+  background-color: #e74c3c; /* लाल रंगाचा बटण */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   margin: 0 auto 20px auto;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b; /* थोडा गडद लाल */
+  transform: scale(1.05); /* हलके वाढलेले बटण hover वर */
+}
+
+.logout-btn:active {
+  transform: scale(0.95); /* क्लिक करताना हलके shrink */
+}

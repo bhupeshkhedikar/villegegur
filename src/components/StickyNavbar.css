@@ -1,0 +1,221 @@
+/* ---------- Global Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Top Blue Bar ---------- */
+.top-blue-bar {
+  background-color: #1a2bb2;
+  color: white;
+  padding: 6px 20px;
+  font-size: 14px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* ---------- Main Navbar ---------- */
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  background: white;
+}
+
+/* ---------- Logo Section ---------- */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emblem-placeholder img {
+  height: 60px;
+  width: 60px;
+}
+
+.navbar-title {
+  font-size: 1.4rem;
+  color: #1a2bb2;
+  font-weight: bold;
+}
+
+/* ---------- Navigation Section ---------- */
+.nav-section {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #1a2bb2;
+}
+
+/* ---------- Dropdown Menu ---------- */
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  border-radius: 5px;
+  display: none;
+  min-width: 160px;
+  padding: 5px 0;
+  z-index: 999;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  transition: background 0.3s;
+}
+
+.dropdown-menu li a:hover {
+  background: #f2f2f2;
+  color: #1a2bb2;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  margin-left: 5px;
+  transition: transform 0.3s;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* ---------- Hamburger Menu ---------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1101;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animation (close icon) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ---------- Mobile View ---------- */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75%;
+    max-width: 320px;
+    background-color: white;
+    padding: 80px 25px 20px;
+    z-index: 1100;
+    overflow-y: auto;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.2);
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid #eaeaea;
+    padding: 12px 0;
+  }
+
+  .nav-links li a {
+    color: #1a2bb2;
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    position: static;
+    background: #f8f9ff;
+    box-shadow: none;
+    border-radius: 0;
+    display: none;
+    padding-left: 15px;
+  }
+
+  .dropdown-menu.show {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Overlay effect when menu is open */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1090;
+  }
+}

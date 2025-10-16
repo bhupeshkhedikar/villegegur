@@ -1,0 +1,45 @@
+.tables-display {
+  padding: 20px;
+}
+
+.table-wrapper {
+  margin-bottom: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  padding: 15px;
+}
+
+.table-title {
+  color: #1a2bb2;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.responsive-table table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+.responsive-table th,
+.responsive-table td {
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.responsive-table th {
+  background-color: #1a2bb2;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .responsive-table table {
+    font-size: 0.8rem;
+    min-width: 100%;
+  }
+}
