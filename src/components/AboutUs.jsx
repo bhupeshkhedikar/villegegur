@@ -41,7 +41,7 @@ const AboutUs = () => {
         {/* Main Content */}
         <div className="content-section">
           <div className="image-container">
-            <img src='https://gpgosebujruk.in/public/uploads/about_photo.jpg' alt="गावाचे दृश्य" />
+            <img src='https://i.postimg.cc/1RYxJCgF/Whats-App-Image-2025-10-09-at-11-02-07-a7cd6d8f.jpg' alt="गावाचे दृश्य" />
           </div>
 
           <div className="objectives-container">
