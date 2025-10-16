@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './ImportantLinks.css';
 
 const ImportantLinks = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const logosRowRef = useRef(null);
 
   const logos = [
     {
@@ -37,23 +38,37 @@ const ImportantLinks = () => {
     }
   ];
 
-  const openModal = (logo) => {
-    setSelectedImage(logo);
-  };
+  const openModal = (logo) => setSelectedImage(logo);
+  const closeModal = () => setSelectedImage(null);
 
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
+  // 🔄 Auto-scroll carousel for mobile view
+  useEffect(() => {
+    const container = logosRowRef.current;
+    if (!container) return;
+
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile) return;
+
+    let scrollStep = 1;
+    const scrollInterval = setInterval(() => {
+      if (!container) return;
+      container.scrollLeft += scrollStep;
+
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+        container.scrollLeft = 0;
+      }
+    }, 25);
+
+    return () => clearInterval(scrollInterval);
+  }, []);
 
   return (
     <div className="important-links">
       {/* Section Title */}
-      <div style={{margin:'0 auto', textAlign:'center', padding:'1rem 0', fontSize:24, fontWeight:'bold', color:'black'}}>
-        <b>महत्वाचे शासकीय दुवे</b>
-      </div>
+      <div className="section-title">महत्वाचे शासकीय दुवे</div>
 
-      {/* Logos Row */}
-      <div className="logos-row">
+      {/* Logos Row - Auto Carousel in Mobile */}
+      <div className="logos-row" ref={logosRowRef}>
         {logos.map((logo, index) => (
           <a
             key={index}
@@ -74,55 +89,22 @@ const ImportantLinks = () => {
         ))}
       </div>
 
-      {/* Important Links Scrolling Section */}
+      {/* Scrolling Important Links Section */}
       <div className="important-links-container">
-        <div className="important-links-heading">
-          महत्वाच्या वेबसाइट लिंक
-        </div>
-
+        <div className="important-links-heading">महत्वाच्या वेबसाइट लिंक</div>
         <div className="marquee-wrapper">
           <div className="marquee-content">
-            <a href="https://maharashtra.gov.in/site/1628/RTS-act" target="_blank" rel="noopener noreferrer">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <path d="M10 17l5-5-5-5v10z"></path>
-              </svg>
-              महाराष्ट्र लोकसेवा हक्क अधिनियम २०१५
-            </a>
-            <a href="https://maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <path d="M10 17l5-5-5-5v10z"></path>
-              </svg>
-              महाराष्ट्र शासन
-            </a>
-            <a href="https://aaplesarkar.maharashtra.gov.in/en/" target="_blank" rel="noopener noreferrer">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <path d="M10 17l5-5-5-5v10z"></path>
-              </svg>
-              आपले सरकार
-            </a>
-            <a href="https://grievances.maharashtra.gov.in/en" target="_blank" rel="noopener noreferrer">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <path d="M10 17l5-5-5-5v10z"></path>
-              </svg>
-              आपले सरकार - तक्रार निवारण प्रणाली
-            </a>
-            <a href="https://pgportal.gov.in/" target="_blank" rel="noopener noreferrer">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <path d="M10 17l5-5-5-5v10z"></path>
-              </svg>
-              प्रशासनीक सुधार और लोक शिकायत विभाग
-            </a>
-            <a href="https://rdd.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">
-              <svg width="24" height="24" viewBox="0 0 24 24">
-                <path d="M10 17l5-5-5-5v10z"></path>
-              </svg>
-              ग्राम विकास योजना
-            </a>
+            <a href="https://maharashtra.gov.in/site/1628/RTS-act" target="_blank" rel="noopener noreferrer">महाराष्ट्र लोकसेवा हक्क अधिनियम २०१५</a>
+            <a href="https://maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">महाराष्ट्र शासन</a>
+            <a href="https://aaplesarkar.maharashtra.gov.in/en/" target="_blank" rel="noopener noreferrer">आपले सरकार</a>
+            <a href="https://grievances.maharashtra.gov.in/en" target="_blank" rel="noopener noreferrer">आपले सरकार - तक्रार निवारण प्रणाली</a>
+            <a href="https://pgportal.gov.in/" target="_blank" rel="noopener noreferrer">प्रशासनीक सुधार और लोक शिकायत विभाग</a>
+            <a href="https://rdd.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">ग्राम विकास योजना</a>
           </div>
         </div>
       </div>
 
-      {/* Modal for Zoom (optional, still works) */}
+      {/* Modal for Zoom Image */}
       {selectedImage && (
         <div className="modal-overlay" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
