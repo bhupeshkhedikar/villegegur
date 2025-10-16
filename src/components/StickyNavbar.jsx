@@ -53,7 +53,7 @@ const StickyNavbar = () => {
       {/* Top Blue Bar */}
       <div className="top-blue-bar">
         <div className="contact-info">
-          <span className="email">gpwakal@gmail.com</span>
+          <span className="email">gpgurdha@gmail.com</span>
           <span className="phone">988139596</span>
         </div>
       </div>
