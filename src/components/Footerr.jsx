@@ -38,13 +38,13 @@ const Footerr = () => {
         </div>
         <div className="wp-footer-blue-column wp-naye-samiti">
           <h4>नवीन समिती</h4>
-          <p>तंटामुक्त समिती वाकल</p>
-          <p>ग्राम कृषि विकास समिति वाकल</p>
+          <p>तंटामुक्त समिती गुरढा</p>
+          <p>ग्राम कृषि विकास समिति गुरढा</p>
         </div>
         <div className="wp-footer-blue-column wp-samiti">
           <h4>समिती</h4>
-         <p>तंटामुक्त समिती वाकल</p>
-          <p>ग्राम कृषि विकास समिति वाकल</p>
+         <p>तंटामुक्त समिती गुरढा</p>
+          <p>ग्राम कृषि विकास समिति गुरढा</p>
         </div>
         <div className="wp-footer-blue-column wp-quick-links">
           <h4>त्वरित लिंक्स</h4>
